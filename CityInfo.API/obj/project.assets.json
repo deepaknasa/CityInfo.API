@@ -5789,17 +5789,17 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "k5Lo/lAoWJyUXTOzRAKtkR262lV3Nx4zYwfoGbBqqxu5Z9VYYKhn4fYCkMHVU1oYVLfTvP9gdAGFmXh2/H3wcQ==",
+      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "files": [
-        "Microsoft.CodeAnalysis.Analyzers.1.1.0.nupkg.sha512",
-        "Microsoft.CodeAnalysis.Analyzers.nuspec",
         "ThirdPartyNotices.rtf",
         "analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll",
         "analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.Analyzers.dll",
         "analyzers/dotnet/vb/Microsoft.CodeAnalysis.Analyzers.dll",
         "analyzers/dotnet/vb/Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll",
+        "microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
+        "microsoft.codeanalysis.analyzers.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
       ]
@@ -9430,12 +9430,10 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "z8MN0Jnm5sX3OhyRIJ0GIWgfpgr0TGMZXkkSTH6ZUdY1TtCC6NQ8Y6Dh/Qbb1qcqtUyxqFs7cFKXB9yS/XEsRQ==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
-        "System.Linq.Queryable.4.0.1.nupkg.sha512",
-        "System.Linq.Queryable.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/monoandroid10/_._",
@@ -9483,7 +9481,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.linq.queryable.4.0.1.nupkg.sha512",
+        "system.linq.queryable.nuspec"
       ]
     },
     "System.Memory/4.5.1": {
@@ -12218,32 +12218,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dkumar\\.nuget\\packages\\": {},
+    "C:\\Users\\nepak\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\Git\\CityInfo.API\\CityInfo.API\\CityInfo.API.csproj",
+      "projectUniqueName": "C:\\Code\\Git\\CityInfo.API\\CityInfo.API\\CityInfo.API.csproj",
       "projectName": "CityInfo.API",
-      "projectPath": "D:\\Code\\Git\\CityInfo.API\\CityInfo.API\\CityInfo.API.csproj",
-      "packagesPath": "C:\\Users\\dkumar\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\Git\\CityInfo.API\\CityInfo.API\\obj\\",
+      "projectPath": "C:\\Code\\Git\\CityInfo.API\\CityInfo.API\\CityInfo.API.csproj",
+      "packagesPath": "C:\\Users\\nepak\\.nuget\\packages\\",
+      "outputPath": "C:\\Code\\Git\\CityInfo.API\\CityInfo.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\dkumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\ServiceFabricSDK.config"
+        "C:\\Users\\nepak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\Microsoft SDKs\\Service Fabric\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
