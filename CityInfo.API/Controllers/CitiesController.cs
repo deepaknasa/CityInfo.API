@@ -1,28 +1,70 @@
-﻿using CityInfo.API.Models;
+﻿using AutoMapper;
+using CityInfo.API.Entities;
+using CityInfo.API.Extensions;
+using CityInfo.API.Models;
+using CityInfo.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CityInfo.API.Controllers
 {
     [Route("api/cities")]
     public class CitiesController : Controller
     {
-        [HttpGet]
-        public IActionResult GetCities()
+        private ICityInfoRepository _cityInfoRepository;
+
+        public CitiesController(ICityInfoRepository cityInfoRepository)
         {
-            return Ok(CitiesDataStore.Current.Cities);
+            _cityInfoRepository = cityInfoRepository;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetCities(bool includePointsOfInterest = false)
+        {
+            var citiesWithoutPOIDto = new List<CityWithoutPointOfInterestDto>();
+            var citiesDto = new List<CityDto>();
+            var cities = await _cityInfoRepository.GetCitiesAsync(includePointsOfInterest);
+            foreach (City city in cities)
+            {
+
+                if (includePointsOfInterest)
+                {
+                    citiesDto.Add(Mapper.Map<CityDto>(city));
+                }
+                else
+                {
+                    citiesWithoutPOIDto.Add(Mapper.Map<CityWithoutPointOfInterestDto>(city));
+                }
+            }
+            if (includePointsOfInterest)
+            {
+                return Ok(citiesDto);
+            }
+            else
+            {
+                return Ok(citiesWithoutPOIDto);
+            }
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetCity(int id)
+        public async Task<IActionResult> GetCity(int id, bool includePointsOfInterest = false)
         {
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == id);
-            if (city == null)
+            if (!await _cityInfoRepository.CityExistsAsync(id))
             {
-                return BadRequest();
+                return NotFound();
             }
-            return Ok(city);
+            var city = await _cityInfoRepository.GetCityAsync(id, includePointsOfInterest);
+            
+            if (includePointsOfInterest)
+            {
+                return Ok(Mapper.Map<IEnumerable<CityDto>>(city));
+            }
+            else
+            {
+                return Ok(Mapper.Map<IEnumerable<CityWithoutPointOfInterestDto>>(city));
+            }
         }
     }
 }
